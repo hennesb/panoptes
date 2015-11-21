@@ -5,28 +5,11 @@ import static org.junit.Assert.*;
 import java.awt.Image;
 import java.io.IOException;
 
-import ie.panoptes.constants.IOTestsConfig;
-
-import org.junit.Before;
 import org.junit.Test;
-import org.springframework.core.io.Resource;
 
-public class ImageIOServiceTest {
+public class ImageIOServiceTest extends AbstractImageLoaderTest {
 	
-	private Resource imageResource;
-	private ImageIOService<Image> asImage;
-	private ImageIOService<byte[]> asByteArray;
-
 	public ImageIOServiceTest() {
-	}
-
-	@Before
-	public void setUp() throws Exception {
-		asImage = new ImageFromResource();
-		asByteArray = new ImageAsBytesFromResource();
-		imageResource = new ImageResourceLoader()
-		.resourceFromClasspath(IOTestsConfig.TEST_IMAGE_FILE);
-		
 	}
 
 	@Test
