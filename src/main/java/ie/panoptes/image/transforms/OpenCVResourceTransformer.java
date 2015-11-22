@@ -1,22 +1,34 @@
 package ie.panoptes.image.transforms;
 
-import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 
+
+
+import org.apache.commons.io.IOUtils;
 import org.opencv.core.CvType;
 import org.opencv.core.Mat;
 import org.opencv.imgcodecs.Imgcodecs;
 import org.springframework.core.io.Resource;
 
 public class OpenCVResourceTransformer implements ResourceTransformer<Mat> {
+	
 
-	public Mat transform(Resource resource) {
-		return null;
+
+	public Mat transform(Resource resource) throws IOException {
+		InputStream stream = resource.getInputStream();
+		return matrixFromByteArray(IOUtils.toByteArray(stream));
+	}
+   
+	
+	public Mat transform(BufferedImage image) throws IOException {
+		ByteArrayOutputStream outStream=new ByteArrayOutputStream();
+		return matrixFromByteArray(outStream.toByteArray());
 	}
 
-	public Mat transform(Image image) {
-		return null;
-	}
-
+	
 	public Mat tranform(byte[] bytes) {
         return matrixFromByteArray(bytes);
 	}

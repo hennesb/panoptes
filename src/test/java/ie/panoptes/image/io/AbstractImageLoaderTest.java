@@ -6,6 +6,7 @@ import ie.panoptes.image.transforms.OpenCVResourceTransformer;
 import ie.panoptes.image.transforms.ResourceTransformer;
 
 import java.awt.Image;
+import java.awt.image.BufferedImage;
 
 import org.junit.Before;
 import org.opencv.core.Mat;
@@ -21,7 +22,7 @@ import org.springframework.core.io.Resource;
 public abstract class AbstractImageLoaderTest extends NativeLibraryInitializer{
 
 	protected Resource imageResource;
-	protected ImageIOService<Image> asImage;
+	protected ImageIOService<BufferedImage> asImage;
 	protected ImageIOService<byte[]> asByteArray;
 	protected ResourceTransformer<Mat> opencvTranformer;
 
