@@ -31,7 +31,8 @@ public class OpenCVResourceConverter implements ResourceConverter<Mat> {
      */
 	public Mat convert(BufferedImage image) throws IOException {
 		DataBufferByte buffer = (DataBufferByte) image.getRaster().getDataBuffer();
-		return matrixFromByteArray(buffer.getData(), types.map(image.getType()));
+		return matrixFromByteArrayNoDecode(buffer.getData(), types.map(image.getType()));
+		
 	}
 
     /**
@@ -48,5 +49,12 @@ public class OpenCVResourceConverter implements ResourceConverter<Mat> {
 		Mat theImage = Imgcodecs.imdecode(matrix, Imgcodecs.CV_LOAD_IMAGE_ANYCOLOR);
 		return theImage;	
 	}
+	
+	private Mat matrixFromByteArrayNoDecode(byte[] bytes, OpenCVType type){
+		Mat theMatrix = new Mat(bytes.length,1, type.getType());
+		theMatrix.put(0, 0, bytes);
+		return theMatrix;	
+	}
+	
 
 }
