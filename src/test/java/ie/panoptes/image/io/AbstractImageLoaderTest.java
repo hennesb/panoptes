@@ -2,8 +2,8 @@ package ie.panoptes.image.io;
 
 import ie.panoptes.constants.IOTestsConfig;
 import ie.panoptes.framework.base.NativeLibraryInitializer;
-import ie.panoptes.image.transforms.OpenCVResourceTransformer;
-import ie.panoptes.image.transforms.ResourceTransformer;
+import ie.panoptes.image.transforms.OpenCVResourceConverter;
+import ie.panoptes.image.transforms.ResourceConverter;
 
 import java.awt.Image;
 import java.awt.image.BufferedImage;
@@ -24,7 +24,7 @@ public abstract class AbstractImageLoaderTest extends NativeLibraryInitializer{
 	protected Resource imageResource;
 	protected ImageIOService<BufferedImage> asImage;
 	protected ImageIOService<byte[]> asByteArray;
-	protected ResourceTransformer<Mat> opencvTranformer;
+	protected ResourceConverter<Mat> opencvConverter;
 
 	public AbstractImageLoaderTest() {
 		super();
@@ -48,7 +48,7 @@ public abstract class AbstractImageLoaderTest extends NativeLibraryInitializer{
 	}
 	
 	private void initializeTransformers(){
-		opencvTranformer = new OpenCVResourceTransformer();
+		opencvConverter = new OpenCVResourceConverter();
 	}
 
 }

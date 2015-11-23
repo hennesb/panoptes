@@ -19,21 +19,21 @@ public class ResourceTransformersTest extends AbstractImageLoaderTest{
 	@Test
 	public void image_read_as_bytes_and_decoded_to_open_cv_matrix() throws IOException {
 		byte [] bytes = asByteArray.imageFrom(imageResource);
-		Mat decodeImageAsMatrix = opencvTranformer.tranform(bytes);
+		Mat decodeImageAsMatrix = opencvConverter.convert(bytes);
 		assertFalse(decodeImageAsMatrix.dataAddr() == 0);		
 	}
 	
 	@Test
 	public void image_read_as_stream_decoded_to_open_cv_matrix() throws IOException{
-		Mat decodeImageAsMatrix = opencvTranformer.transform(imageResource);
+		Mat decodeImageAsMatrix = opencvConverter.convert(imageResource);
 		assertFalse(decodeImageAsMatrix.dataAddr() == 0);
 	}
-	
+
 	@Ignore
 	@Test
 	public void image_read_as_bufferimage_decoded_to_open_cv_matrix() throws IOException{
 		BufferedImage image = asImage.imageFrom(imageResource);
-		Mat decodeImageAsMatrix = opencvTranformer.transform(image);
+		Mat decodeImageAsMatrix = opencvConverter.convert(image);
 		assertFalse(decodeImageAsMatrix.dataAddr() == 0);
 	}
 
