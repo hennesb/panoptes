@@ -47,4 +47,10 @@ public class FaceDetectionTest extends AbstractImageLoaderTest{
 		Resource imageResource = new ImageResourceLoader().resourceFromClasspath(IOTestsConfig.TEST_IMAGE_CAT);
 		assertFalse(detecter.faceDetected(imageResource));
 	}
+
+	@Test
+	public void black_and_white_image_face_detected() throws IOException{
+		Resource imageResource = new ImageResourceLoader().resourceFromClasspath(IOTestsConfig.TEST_IMAGE_BLACK_AND_WHITE_WITH_FACE);
+		assertTrue(detecter.faceDetected(imageResource));
+	}
 }
