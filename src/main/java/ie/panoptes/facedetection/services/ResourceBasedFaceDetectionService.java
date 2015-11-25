@@ -10,7 +10,7 @@ import org.springframework.core.io.Resource;
 import ie.panoptes.facedetection.api.FaceDetection;
 import ie.panoptes.image.io.ImageResourceLoader;
 import ie.panoptes.image.transforms.OpenCVResourceConverter;
-import ie.panoptes.image.transforms.ResourceConverter;
+import ie.panoptes.image.transforms.api.ResourceConverter;
 
 public class ResourceBasedFaceDetectionService implements FaceDetection<Resource> {
 	

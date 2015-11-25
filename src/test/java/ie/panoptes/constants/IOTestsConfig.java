@@ -13,6 +13,8 @@ public class IOTestsConfig {
 	public static final String TEST_IMAGE_MULTIPLE_FACES = "faces.jpg";
 	public static final String TEST_IMAGE_HAND = "hand.jpg";
 	public static final String TEST_IMAGE_CAT = "cat.jpg";
+	public static final String TEST_IMAGE_CROWD = "crowd.jpg";
+	public static final String TEST_BACK_OF_SOMEONES_HEAD = "back_of_head.jpg";
 	public static final String TEST_IMAGE_BLACK_AND_WHITE_WITH_FACE = "b_and_w.jpg";
 	public static final byte[] PNG_MAGIC_NUMBER =  { -119, 80, 78, 71 };
 	

@@ -1,6 +1,7 @@
 package ie.panoptes.image.io;
 
 import ie.panoptes.framework.base.NativeLibraryInitializer;
+import ie.panoptes.image.io.api.ImageIOService;
 
 import java.io.IOException;
 import java.io.InputStream;

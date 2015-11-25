@@ -1,5 +1,6 @@
 package ie.panoptes.image.transforms;
 
+import ie.panoptes.image.transforms.api.ResourceConverter;
 import ie.panoptes.mappers.OpenCvTypesFromAwtTypes;
 import ie.panoptes.opencv.types.OpenCVType;
 import ie.panoptes.opencv.types.UnsignedEightBit;

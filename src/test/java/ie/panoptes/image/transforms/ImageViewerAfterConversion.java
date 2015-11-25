@@ -11,8 +11,9 @@ import ie.panoptes.framework.base.NativeLibraryInitializer;
 import ie.panoptes.image.io.AbstractImageLoaderTest;
 import ie.panoptes.image.io.ImageAsBytesFromResource;
 import ie.panoptes.image.io.ImageFromResource;
-import ie.panoptes.image.io.ImageIOService;
 import ie.panoptes.image.io.ImageResourceLoader;
+import ie.panoptes.image.io.api.ImageIOService;
+import ie.panoptes.image.transforms.api.ResourceConverter;
 
 public class ImageViewerAfterConversion extends NativeLibraryInitializer {
 	private static Resource imageResource = new ImageResourceLoader()
