@@ -24,7 +24,6 @@ public class ResourceBasedFaceDetectionService implements FaceDetection<Resource
 	public boolean faceDetected(Resource resource) throws IOException {
 		resourceConverter = new OpenCVResourceConverter();
 		Mat matrix = resourceConverter.convert(resource);
-		System.out.println("matrix is " + matrix.dataAddr());
 		return openCvFaceDetected(matrix);
 	}
 	
@@ -38,11 +37,9 @@ public class ResourceBasedFaceDetectionService implements FaceDetection<Resource
 
 	private boolean openCvFaceDetected(Mat image) throws IOException{
 		String fileName = new ImageResourceLoader().resourceFromClasspath(PATH).getFile().getPath();
-		System.out.println("Filename " + fileName);
 		CascadeClassifier faceDetector = new CascadeClassifier(fileName);
 	    MatOfRect faceDetections = new MatOfRect();
 	    faceDetector.detectMultiScale(image, faceDetections);
-	    System.out.println(String.format("Detected %s faces", faceDetections.toArray().length));
 		return faceDetections.toArray().length > 0;
 	}
 
