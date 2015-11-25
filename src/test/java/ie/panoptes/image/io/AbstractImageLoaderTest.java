@@ -2,12 +2,9 @@ package ie.panoptes.image.io;
 
 import ie.panoptes.constants.IOTestsConfig;
 import ie.panoptes.framework.base.AbstractFrameworkTest;
-import ie.panoptes.framework.base.NativeLibraryInitializer;
 import ie.panoptes.image.io.api.ImageIOService;
 import ie.panoptes.image.transforms.OpenCVResourceConverter;
 import ie.panoptes.image.transforms.api.ResourceConverter;
-
-import java.awt.Image;
 import java.awt.image.BufferedImage;
 
 import org.junit.Before;

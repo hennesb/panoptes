@@ -5,18 +5,25 @@ import static org.junit.Assert.*;
 import java.io.IOException;
 
 import ie.panoptes.constants.IOTestsConfig;
-import ie.panoptes.facedetection.api.FaceDetection;
 import ie.panoptes.image.io.AbstractImageLoaderTest;
 import ie.panoptes.image.io.ImageResourceLoader;
+import ie.panoptes.image.transforms.OpenCVResourceConverter;
 
+import org.junit.Before;
 import org.junit.Test;
 import org.springframework.core.io.Resource;
 
 public class FaceDetectionTest extends AbstractImageLoaderTest {
 
-	private FaceDetection<Resource> detecter = new ResourceBasedFaceDetectionService();;
+	private ResourceBasedFaceDetectionService detecter = new ResourceBasedFaceDetectionService();;
 
 	public FaceDetectionTest() {
+	}
+	
+	@Before
+	public void setup() throws Exception{
+		super.setUp();
+		detecter.setResourceConverter(new OpenCVResourceConverter());		
 	}
 
 	@Test
