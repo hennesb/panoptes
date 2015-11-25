@@ -1,6 +1,7 @@
 package ie.panoptes.image.io;
 
 import ie.panoptes.constants.IOTestsConfig;
+import ie.panoptes.framework.base.AbstractFrameworkTest;
 import ie.panoptes.framework.base.NativeLibraryInitializer;
 import ie.panoptes.image.io.api.ImageIOService;
 import ie.panoptes.image.transforms.OpenCVResourceConverter;
@@ -20,7 +21,7 @@ import org.springframework.core.io.Resource;
  * transformer references. 
  *
  */
-public abstract class AbstractImageLoaderTest extends NativeLibraryInitializer{
+public abstract class AbstractImageLoaderTest extends AbstractFrameworkTest{
 
 	protected Resource imageResource;
 	protected ImageIOService<BufferedImage> asImage;
