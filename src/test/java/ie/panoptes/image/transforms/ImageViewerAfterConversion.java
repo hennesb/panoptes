@@ -7,15 +7,14 @@ import org.opencv.core.Mat;
 import org.springframework.core.io.Resource;
 
 import ie.panoptes.constants.IOTestsConfig;
-import ie.panoptes.framework.base.NativeLibraryInitializer;
-import ie.panoptes.image.io.AbstractImageLoaderTest;
+import ie.panoptes.framework.base.FrameworkNativeLibraryInitializer;
 import ie.panoptes.image.io.ImageAsBytesFromResource;
 import ie.panoptes.image.io.ImageFromResource;
 import ie.panoptes.image.io.ImageResourceLoader;
 import ie.panoptes.image.io.api.ImageIOService;
 import ie.panoptes.image.transforms.api.ResourceConverter;
 
-public class ImageViewerAfterConversion extends NativeLibraryInitializer {
+public class ImageViewerAfterConversion extends FrameworkNativeLibraryInitializer {
 	private static Resource imageResource = new ImageResourceLoader()
 	.resourceFromClasspath(IOTestsConfig.TEST_IMAGE_FILE);
 	private static  ImageIOService<BufferedImage> asImage = new ImageFromResource();;

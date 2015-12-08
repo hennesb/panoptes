@@ -12,4 +12,5 @@ public interface ResourceConverter<T> {
 	public T convert(BufferedImage image) throws IOException;
 	
 	public T convert(byte[] bytes);
+	
 }

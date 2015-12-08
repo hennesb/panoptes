@@ -8,5 +8,7 @@ public interface FaceDetection<T, C>{
 	
 	public void setResourceConverter(C resourceConverter);
 	
+	public boolean faceDetectedWriteResult(T resource, Location where) throws IOException;
+	
 
 }

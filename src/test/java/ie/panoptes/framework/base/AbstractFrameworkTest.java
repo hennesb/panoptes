@@ -1,5 +1,5 @@
 package ie.panoptes.framework.base;
 
-public abstract class AbstractFrameworkTest extends NativeLibraryInitializer{
+public abstract class AbstractFrameworkTest extends FrameworkNativeLibraryInitializer{
 
 }
